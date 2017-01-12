@@ -67,6 +67,7 @@ abstract class AbstractServer
 
         if (file_exists($file = $this->basePath.'/config.php')) {
             $this->config = include $file;
+            $this->config['database']['database'] = $_SESSION["alexUser"]; //set database name = host
         }
     }
 
